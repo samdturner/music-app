@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+10.times do |n|
+  Band.create!(name: "#{n}th band")
+end
+
+20.times do |m|
+  performance = m % 2 == 0 ? 'live' : 'studio'
+  Album.create!(title: "#{m}th album",
+                band_id: (m % 10),
+                performance: performance)
+end
